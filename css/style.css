@@ -1,0 +1,89 @@
+/* Modern font family */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #f0e6f4; */
+}
+
+head {
+    background-color: #f0e6f4;
+}
+
+/* Navbar styles */
+.navbar {
+    /* background-color: #f0e6f4; */
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #f5f5f5 !important;
+}
+
+.dropdown-item {
+    color: rgb(59, 48, 48) !important;
+}
+
+.dropdown-item:hover {
+    background-color: #9b9dc7;
+}
+
+/* Page header styles */
+#hello {
+    font-size: 3rem;
+    color: #7e549f;
+}
+
+#first {
+    font-size: 1.2rem;
+    color: #a594c0;
+}
+
+.container-lg {
+    background-color: #d6c1e1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Sample JS section styles */
+.container {
+    background-color: #e4d4ea;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.h3 {
+    font-weight: bold;
+    color: #7e549f;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #a594c0;
+    border-color: #a594c0;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #9b9dc7;
+    border-color: #9b9dc7;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+    font-weight: bold;
+}
+
+.btn-warning:hover {
+    background-color: #eea236;
+    border-color: #eea236;
+    color: #fff;
+}
