@@ -51,6 +51,25 @@ function displayMinute() {
     minuteDiv.innerText = `The total number of minutes since midnight is ${totalMinutes}.`;
 }
 
+// Alert
+function myFunction() {
+    alert("Hello, world!");
+}
+
+// Array functions
+function sortArray() {
+    const input = prompt('Enter a comma-separated list of numbers:');
+    const sortedArray = parseArray(input); // Call the parseArray() function to sort the array
+    alert(sortedArray);
+}
+
+function parseArray(input) {
+    const arr = input.split(',').map(Number);
+    arr.sort(function (a, b) { return a - b }); // Sort the array in ascending order
+    return arr;
+}
+
+
 // map API
 function mapLoad() {
     // Define the coordinate

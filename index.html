@@ -45,7 +45,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">More</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="map.html">Sandbox</a>
+                            <a class="dropdown-item" href="sandbox.html">Sandbox</a>
                             <a class="dropdown-item" href="#">Data (coming soon!)</a>
                         </div>
                     </li>
@@ -54,13 +54,40 @@
         </div>
     </nav>
 
-    <div class="container-lg">
+    <div class="container mt-5">
         <h1 id="hello">Nicole Yip portfolio</h1>
         <p id="first">Welcome to my portfolio. Check back for updates.</p>
-        <img src="trees.png" class="mx-auto d-block img-fluid" id="treeImg" style="max-height:500px;">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="carousel/hubbard.jpg" class="d-block w-100" alt="Hubbard Hall">
+                </div>
+                <div class="carousel-item">
+                    <img src="carousel/masshall.jpg" class="d-block w-100" alt="Massachuetts Hall">
+                </div>
+                <div class="carousel-item">
+                    <img src="carousel/museum.jpg" class="d-block w-100" alt="Bowdoin College Museum of Art">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="h3">Sample JS</div>
         <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate number</button>
         <button type="button" class="btn btn-warning" onclick="changeTitle()">Fancy a change</button>
@@ -69,6 +96,17 @@
         <div id="minute"></div>
 
     </div>
+
+    <footer class="d-none d-sm-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>Copyright © 2023 Nicole Yip.
+                        All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

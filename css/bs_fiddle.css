@@ -1,0 +1,10 @@
+#cols:first-letter {
+    color: #7e549f;
+    float: left;
+    font-family: Georgia, serif;
+    font-size: 3em;
+    line-height: 0.8em;
+    padding-top: 0.2em;
+    padding-right: 0.1em;
+    padding-left: 0.1em;
+}
