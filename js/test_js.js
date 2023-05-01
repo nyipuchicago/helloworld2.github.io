@@ -11,6 +11,85 @@ function conditional() {
     }
 }
 
+// Music API
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('search-form');
+    const searchTermInput = document.getElementById('search-term');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const searchTerm = searchTermInput.value;
+        searchBands(event);
+    });
+
+    function searchBands(event) {
+        event.preventDefault();
+        const searchQuery = document.querySelector('#search-query').value;
+        const endpoint = `https://musicbrainz.org/ws/2/artist?query=${searchQuery}&limit=10`;
+
+        fetch(endpoint, {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const bands = data.artists;
+                const bandList = document.createElement('ul');
+
+                for (const band of bands) {
+                    const bandLink = document.createElement('a');
+                    bandLink.textContent = band.name;
+                    bandLink.href = '#';
+                    bandLink.setAttribute('data-id', band.id);
+                    bandLink.addEventListener('click', showAlbums);
+                    const bandListItem = document.createElement('li');
+                    bandListItem.appendChild(bandLink);
+                    bandList.appendChild(bandListItem);
+                }
+
+                const results = document.querySelector('#search-results');
+                results.innerHTML = '';
+                results.appendChild(bandList);
+            })
+            .catch(error => console.error(error));
+    }
+
+    function showAlbums(event) {
+        const bandId = event.target.dataset.id;
+        const endpoint = `https://musicbrainz.org/ws/2/release?artist=${bandId}&inc=artist-credits&limit=100`;
+
+        fetch(endpoint, {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const albums = data.releases;
+                const albumList = document.createElement('ul');
+
+                for (const album of albums) {
+                    const albumLink = document.createElement('a');
+                    albumLink.textContent = `${album.title} (${album.date})`;
+                    albumLink.href = `https://musicbrainz.org/release/${album.id}`;
+                    const albumListItem = document.createElement('li');
+                    albumListItem.appendChild(albumLink);
+                    albumList.appendChild(albumListItem);
+                }
+
+                const results = document.querySelector('#search-results');
+                results.innerHTML = '';
+                results.appendChild(albumList);
+            })
+            .catch(error => console.error(error));
+    }
+
+    const searchForm = document.querySelector('#search-form');
+    searchForm.addEventListener('submit', searchBands);
+
+});
+
 // for loop
 for (i = 0; i < 5; i++) {
     console.log("The number is " + i);
